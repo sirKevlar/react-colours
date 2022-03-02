@@ -1,3 +1,46 @@
 .App {
+  height: 100vh;
   text-align: center;
+  display: grid;
+  grid-template-rows: 8% 92%;
+  grid-template-areas:
+    'site-title'
+    'main-body';
+  color: rgba(255, 255, 255, 0.678);
+}
+
+.site-title {
+  background-image: linear-gradient(
+    to bottom right,
+    red,
+    orange,
+    yellow,
+    green,
+    blue,
+    indigo,
+    violet
+  );
+  grid-area: site-title;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 15px solid rgba(0, 0, 0, 0.37);
+}
+
+.homepage {
+  grid-area: main-body;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.color-title {
+  font-size: 5em;
+}
+
+.details-card {
+  width: 60%;
+  background-color: rgba(0, 0, 0, 0.493);
 }
