@@ -12,16 +12,30 @@ export default function DetailsCard({ selectedColor }) {
 
     return (
       <div className='details-card'>
-        <ul>
-          {colorVals.map((val) => {
-            const key = Object.keys(val)[0];
-            return (
-              <li key={key}>
-                {key}: {val[key]}
-              </li>
-            );
-          })}
-        </ul>
+        <div className='list-left'>
+          <ul>
+            {colorVals.map((val) => {
+              const key = Object.keys(val)[0];
+              return (
+                <li className='color-val-list' key={key}>
+                  {key}:
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+        <div className='list-right'>
+          <ul>
+            {colorVals.map((val) => {
+              const key = Object.keys(val)[0];
+              return (
+                <li className='color-val-list' key={key}>
+                  {val[key]}
+                </li>
+              );
+            })}
+          </ul>
+        </div>
       </div>
     );
   }

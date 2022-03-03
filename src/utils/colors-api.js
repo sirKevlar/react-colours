@@ -5,7 +5,7 @@ const colorsApi = axios.create({
 });
 
 const getColor = (color) => {
-  return colorsApi.get(`/id?rgb=${color}`).then(({ data }) => {
+  return colorsApi.get(`/id?${color}`).then(({ data }) => {
     return data;
   });
 };
