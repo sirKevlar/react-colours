@@ -8,6 +8,7 @@
     'main-body';
   color: rgba(255, 255, 255, 0.678);
   min-width: 600px;
+  font-weight: 500;
 }
 
 ul {
@@ -21,11 +22,20 @@ h2 {
   font-size: 1em;
 }
 
+h2,
+p {
+  background-color: rgba(0, 0, 0, 0.493);
+
+  border-radius: 5px;
+  padding: 0.1em;
+}
+
 .site-title {
   z-index: 100;
   box-sizing: border-box;
   position: fixed;
   width: 100%;
+  min-width: 600px;
   height: 80px;
   background-image: linear-gradient(
     to bottom right,
@@ -51,15 +61,16 @@ h2 {
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
-  padding-top: 80px;
+  padding-top: 75px;
 }
 
 .color-title {
   position: absolute;
   justify-self: center;
-  font-size: 5em;
-  margin-top: 80px;
-  min-width: 600px;
+  font-size: 3em;
+  margin-top: 90px;
+  background-color: rgba(0, 0, 0, 0.493);
+  padding: 0 0 5px 0;
 }
 
 .main-col-deets {
@@ -85,14 +96,20 @@ ul {
   min-width: 400px;
 }
 
+.color-title,
 .details-card,
 form {
   width: 60vw;
   background-color: rgba(0, 0, 0, 0.493);
   border-radius: 5px;
-  padding: 1em;
   max-width: 800px;
   min-width: 400px;
+}
+
+.details-card,
+form {
+  padding: 1em;
+  margin-bottom: 5px;
 }
 
 .content-wrapper {
@@ -132,9 +149,14 @@ form {
 }
 
 button {
-  width: 35%;
+  width: 210px;
   max-width: 500px;
   margin: 0.5em;
+  background-color: rgba(0, 0, 0, 0.74);
+  color: aliceblue;
+  font-weight: 700;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  border-radius: 20px;
 }
 
 li {
@@ -153,13 +175,16 @@ a:focus {
 
 #scheme-para {
   margin: 0;
+  font-size: 1em;
+  background: none;
 }
 
 .scheme-options {
   background-color: rgba(0, 0, 0, 0.6);
   width: 50%;
-  padding: 0.2em;
+  padding: 0;
   border-radius: 3px;
+  font-size: 0.9em;
 }
 
 .scheme-options:hover {

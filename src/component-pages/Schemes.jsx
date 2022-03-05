@@ -1,22 +1,39 @@
 import React, { useState } from 'react';
-import SchemeList from './ScemeList';
+import SchemeList from './SchemeList';
 
-export default function Schemes({ rgbVal, schemes, setSchemes, displayFullDetails, setDisplayFullDetails }) {
-
+export default function Schemes({
+  rgbVal,
+  schemes,
+  setSchemes,
+  displayFullDetails,
+  setDisplayFullDetails,
+  isMenuOpen,
+  setIsMenuOpen,
+}) {
   return (
     <section
       className='homepage main-body'
       style={{ backgroundColor: `rgb${rgbVal}` }}
     >
-      <h2>Hit the button for full breakdown of color values</h2>
-      <button
-        onClick={() => {
-          setDisplayFullDetails(!displayFullDetails);
-        }}
-      >
-        Full Scheme Details
-      </button>
-      <SchemeList rgbVal={rgbVal} setSchemes={setSchemes} />
+      {!isMenuOpen && (
+        <h2>Hit the button for full breakdown of color values</h2>
+      )}
+      {!isMenuOpen && (
+        <button
+          id='details-button'
+          onClick={() => {
+            setDisplayFullDetails(!displayFullDetails);
+          }}
+        >
+          Scheme Details
+        </button>
+      )}
+      <SchemeList
+        rgbVal={rgbVal}
+        setSchemes={setSchemes}
+        isMenuOpen={isMenuOpen}
+        setIsMenuOpen={setIsMenuOpen}
+      />
       <div className='scheme-list'>
         {!schemes ? (
           <h2>Be Patient!</h2>

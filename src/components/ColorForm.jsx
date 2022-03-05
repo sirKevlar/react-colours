@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import ScemeList from '../component-pages/ScemeList';
+import SchemeList from '../component-pages/SchemeList';
 import getColor from '../utils/colors-api';
 
 export default function ColorForm({
@@ -8,6 +8,8 @@ export default function ColorForm({
   setRgbVal,
   rgbVal,
   setSchemes,
+  isMenuOpen,
+  setIsMenuOpen,
 }) {
   const [inputFieldVal, setInputFieldVal] = useState('');
 
@@ -37,7 +39,12 @@ export default function ColorForm({
           setInputFieldVal(e.target.value);
         }}
       />
-      <ScemeList rgbVal={rgbVal} setSchemes={setSchemes}/>
+      <SchemeList
+        rgbVal={rgbVal}
+        setSchemes={setSchemes}
+        isMenuOpen={isMenuOpen}
+        setIsMenuOpen={setIsMenuOpen}
+      />
     </form>
   );
 }

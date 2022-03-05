@@ -9,6 +9,7 @@ function App() {
   const [schemes, setSchemes] = useState({});
   const [colorName, setColorName] = useState('');
   const [displayFullDetails, setDisplayFullDetails] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
     <div className='App'>
@@ -29,6 +30,8 @@ function App() {
               setSchemes={setSchemes}
               colorName={colorName}
               setColorName={setColorName}
+              isMenuOpen={isMenuOpen}
+              setIsMenuOpen={setIsMenuOpen}
             />
           }
         />
@@ -42,6 +45,8 @@ function App() {
               setSchemes={setSchemes}
               displayFullDetails={displayFullDetails}
               setDisplayFullDetails={setDisplayFullDetails}
+              isMenuOpen={isMenuOpen}
+              setIsMenuOpen={setIsMenuOpen}
             />
           }
         />

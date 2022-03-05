@@ -4,7 +4,14 @@ import DetailsCard from '../components/DetailsCard';
 import getColor from '../utils/colors-api';
 import randomColorGenerator from '../utils/random-color-generator';
 
-export default function Home({ rgbVal, setRgbVal, setSchemes, setColorName }) {
+export default function Home({
+  rgbVal,
+  setRgbVal,
+  setSchemes,
+  setColorName,
+  isMenuOpen,
+  setIsMenuOpen,
+}) {
   const [selectedColor, setSelectedColor] = useState({});
 
   useEffect(() => {
@@ -31,6 +38,8 @@ export default function Home({ rgbVal, setRgbVal, setSchemes, setColorName }) {
           setRgbVal={setRgbVal}
           rgbVal={rgbVal}
           setSchemes={setSchemes}
+          isMenuOpen={isMenuOpen}
+          setIsMenuOpen={setIsMenuOpen}
         />
       </div>
     </section>

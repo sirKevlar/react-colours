@@ -2,9 +2,13 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import getColor from '../utils/colors-api';
 
-export default function SchemeList({ rgbVal, setSchemes }) {
+export default function SchemeList({
+  rgbVal,
+  setSchemes,
+  isMenuOpen,
+  setIsMenuOpen,
+}) {
   const urlEnd = window.location.href.slice(-7);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
 
   const colorFormatOptions = [
@@ -40,7 +44,7 @@ export default function SchemeList({ rgbVal, setSchemes }) {
   };
   return (
     <div>
-      {urlEnd !== 'schemes' ? (
+      {urlEnd !== 'schemes' && 
         <>
           <ul>
             {colorFormatOptions.map((color) => {
@@ -51,9 +55,7 @@ export default function SchemeList({ rgbVal, setSchemes }) {
 
           <button className='submit-color'>Find Color</button>
         </>
-      ) : (
-        <p id='nothing'></p>
-      )}
+      }
       <button onClick={schemesToggle} className='complimentary-colors'>
         {isMenuOpen ? 'Close Menu' : 'Generate Scheme'}
       </button>
