@@ -13,7 +13,7 @@ export default function DetailsCard({ selectedColor }) {
     return (
       <div className='details-card'>
         <div className='list-left'>
-          <ul>
+          <ul className='right-align'>
             {colorVals.map((val) => {
               const key = Object.keys(val)[0];
               return (
@@ -25,7 +25,7 @@ export default function DetailsCard({ selectedColor }) {
           </ul>
         </div>
         <div className='list-right'>
-          <ul>
+          <ul className='left-align'>
             {colorVals.map((val) => {
               const key = Object.keys(val)[0];
               return (

@@ -4,10 +4,8 @@ import DetailsCard from '../components/DetailsCard';
 import getColor from '../utils/colors-api';
 import randomColorGenerator from '../utils/random-color-generator';
 
-export default function Home() {
+export default function Home({ rgbVal, setRgbVal, setSchemes, setColorName }) {
   const [selectedColor, setSelectedColor] = useState({});
-  const [colorName, setColorName] = useState('');
-  const [rgbVal, setRgbVal] = useState('');
 
   useEffect(() => {
     const color = randomColorGenerator();
@@ -23,15 +21,18 @@ export default function Home() {
       className='homepage main-body'
       style={{ backgroundColor: `rgb${rgbVal}` }}
     >
-      <section className='color-details'>
-        <h2 className='color-title'>{colorName}</h2>
-        <DetailsCard selectedColor={selectedColor} />
-      </section>
-      <ColorForm
-        setSelectedColor={setSelectedColor}
-        setColorName={setColorName}
-        setRgbVal={setRgbVal}
-      />
+      <div className='content-wrapper'>
+        <section className='color-details'>
+          <DetailsCard selectedColor={selectedColor} />
+        </section>
+        <ColorForm
+          setSelectedColor={setSelectedColor}
+          setColorName={setColorName}
+          setRgbVal={setRgbVal}
+          rgbVal={rgbVal}
+          setSchemes={setSchemes}
+        />
+      </div>
     </section>
   );
 }
